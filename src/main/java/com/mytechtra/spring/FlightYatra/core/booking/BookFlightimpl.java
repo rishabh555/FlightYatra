@@ -1,11 +1,15 @@
-package com.mytechtra.spring.FlightYatra.service;
-
+package com.mytechtra.spring.FlightYatra.core.booking;
 import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import com.mytechtra.spring.FlightYatra.UserException.FlightNotAvailableException;
+import com.mytechtra.spring.FlightYatra.UserException.NoTicketException;
+import com.mytechtra.spring.FlightYatra.core.flightservice.FlightService;
+import com.mytechtra.spring.FlightYatra.core.inventory.Inventory;
+import com.mytechtra.spring.FlightYatra.core.pricing.Pricing;
 import com.mytechtra.spring.FlightYatra.model.Booking;
 import com.mytechtra.spring.FlightYatra.model.Flight;
 import com.mytechtra.spring.FlightYatra.model.Ticket;
@@ -25,7 +29,7 @@ public class BookFlightimpl implements BookFlights  {
 	
 
 	@Override
-	public Booking book(long flightId, TicketType ticketType, Date date, int count) throws Exception {
+	public Booking book(long flightId, TicketType ticketType, Date date, int count) throws NoTicketException,FlightNotAvailableException {
 		Flight flight = flightService.getFlightById(flightId);
 		if (flight !=null) 
 		{
@@ -39,13 +43,13 @@ public class BookFlightimpl implements BookFlights  {
 				pricing.price(booking);
 				return booking;
 			} else {
-				throw new Exception("No Tickets");
+				throw new NoTicketException("No Tickets");
 			}
 			
 		}
 		else 
 		{
-			throw new Exception ("Flight not available with requested id"); 
+			throw new FlightNotAvailableException ("Flight not available with requested id"); 
 		}
 
 	}

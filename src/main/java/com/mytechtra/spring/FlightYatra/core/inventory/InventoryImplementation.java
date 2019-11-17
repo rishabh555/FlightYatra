@@ -1,4 +1,4 @@
-package com.mytechtra.spring.FlightYatra.service;
+package com.mytechtra.spring.FlightYatra.core.inventory;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -10,6 +10,7 @@ import org.apache.commons.lang3.time.DateUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import com.mytechtra.spring.FlightYatra.core.flightservice.FlightService;
 import com.mytechtra.spring.FlightYatra.model.Flight;
 import com.mytechtra.spring.FlightYatra.model.Ticket;
 import com.mytechtra.spring.FlightYatra.model.Ticket.TicketType;

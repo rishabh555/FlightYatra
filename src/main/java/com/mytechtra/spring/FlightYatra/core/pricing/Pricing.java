@@ -1,4 +1,4 @@
-package com.mytechtra.spring.FlightYatra.service;
+package com.mytechtra.spring.FlightYatra.core.pricing;
 
 import com.mytechtra.spring.FlightYatra.model.Booking;
 

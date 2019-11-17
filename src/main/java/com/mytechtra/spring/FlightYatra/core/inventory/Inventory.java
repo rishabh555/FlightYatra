@@ -1,4 +1,4 @@
-package com.mytechtra.spring.FlightYatra.service;
+package com.mytechtra.spring.FlightYatra.core.inventory;
 
 import java.util.Date;
 import java.util.List;

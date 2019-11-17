@@ -1,4 +1,4 @@
-package com.mytechtra.spring.FlightYatra.service;
+package com.mytechtra.spring.FlightYatra.core.flightservice;
 
 import java.util.List;
 
@@ -19,6 +19,8 @@ public interface FlightService {
 	List<Flight> listAllFlightsByGivenAirLine(AirLine airLine);
 	
 	boolean unregister(long flightId);
+	
+	boolean update(Flight flight);
 	
 
 }

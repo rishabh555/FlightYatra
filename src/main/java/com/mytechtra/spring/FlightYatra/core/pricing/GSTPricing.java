@@ -1,5 +1,4 @@
-package com.mytechtra.spring.FlightYatra.service;
-
+package com.mytechtra.spring.FlightYatra.core.pricing;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Value;
@@ -14,6 +13,7 @@ public class GSTPricing implements Pricing {
 
 	@Value("${gov.gst.tax}")
 	private double taxPercentage;
+	
 	
 	@Override
 	public void price(Booking booking) {

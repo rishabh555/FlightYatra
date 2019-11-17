@@ -1,4 +1,4 @@
-package com.mytechtra.spring.FlightYatra.service;
+package com.mytechtra.spring.FlightYatra.core.flightservice;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -18,7 +18,6 @@ public class FlightServiceInMemoryImpl implements FlightService {
 
 	@Override
 	public void register(Flight fight) {
-		 
 		flightdb.put(fight.getFlightId(), fight);		
 	}
 
@@ -47,6 +46,12 @@ public class FlightServiceInMemoryImpl implements FlightService {
 	public boolean unregister(long flightId) {
 		boolean removed = flightdb.remove(flightId) != null;
 		return removed;
+	}
+
+	@Override
+	public boolean update(Flight flight) {
+		flightdb.put(flight.getFlightId(), flight);
+		return true;
 	}
 	
 }
